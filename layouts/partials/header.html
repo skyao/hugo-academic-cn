@@ -88,6 +88,10 @@
   <link rel="stylesheet" href="{{ printf "/local/fonts.googleapis.com/css.css?family=%s" . }}">
   {{ end }}
 
+  {{ if true }}
+  <link rel="stylesheet" href="{{ "css/reward.css" | absURL }}" />
+  {{ end }}
+
   <link rel="stylesheet" href="{{ "styles.css" | relLangURL }}">
   {{ range .Site.Params.custom_css }}
   <link rel="stylesheet" href="{{ "/css/" | relURL }}{{ . }}">
