@@ -94,7 +94,9 @@
     
     {{ partial "tags.html" . }}
 
+    {{ if .Site.Params.reward }}
     {{ partial "reward.html" . }}
+    {{ end }}
 
   </div>
 </div>

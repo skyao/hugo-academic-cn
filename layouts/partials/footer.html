@@ -37,9 +37,9 @@
       {{ end }}
     {{ end }}
 
-{{ if true }}
-<script src="{{ "js/reward.js" | absURL }}"></script>
-{{ end }}
+    {{ if .Site.Params.reward }}
+    <script src="{{ "js/reward.js" | absURL }}"></script>
+    {{ end }}
 
     <script src="{{ "/js/hugo-academic.js" | relURL }}"></script>
     {{ range .Site.Params.custom_js }}

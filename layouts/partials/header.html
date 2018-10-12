@@ -88,7 +88,7 @@
   <link rel="stylesheet" href="{{ printf "/local/fonts.googleapis.com/css.css?family=%s" . }}">
   {{ end }}
 
-  {{ if true }}
+  {{ if .Site.Params.reward }}
   <link rel="stylesheet" href="{{ "css/reward.css" | absURL }}" />
   {{ end }}
 

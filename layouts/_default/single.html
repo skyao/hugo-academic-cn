@@ -16,7 +16,9 @@
 
     {{ partial "tags.html" . }}
 
+    {{ if .Site.Params.reward }}
     {{ partial "reward.html" . }}
+    {{ end }}
 
     {{ $related := .Site.RegularPages.Related . | first 5 }}
     {{ with $related }}
