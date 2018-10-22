@@ -18,12 +18,12 @@
     {{ if .Params.image }}
     <img src="{{ "/img/" | relURL }}{{ .Params.image }}" class="pub-banner" itemprop="image">
     {{end}}
-
+    
     {{ if .Params.abstract }}
     <h3>{{ i18n "abstract" }}</h3>
     <p class="pub-abstract" itemprop="text">{{ .Params.abstract | markdownify }}</p>
     {{ end }}
-
+    
     {{ if (.Params.publication_types) and (ne (index .Params.publication_types 0) "0") }}
     <div class="row">
       <div class="col-md-1"></div>
@@ -43,7 +43,7 @@
     </div>
     <div class="d-md-none space-below"></div>
     {{ end }}
-
+    
     {{ if .Params.publication }}
     <div class="row">
       <div class="col-md-1"></div>
@@ -57,7 +57,7 @@
     </div>
     <div class="d-md-none space-below"></div>
     {{ end }}
-
+    
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-10">
@@ -71,28 +71,32 @@
       <div class="col-md-1"></div>
     </div>
     <div class="d-sm-none space-below"></div>
-
+    
     <div class="row" style="padding-top: 10px">
       <div class="col-md-1"></div>
       <div class="col-md-10">
         <div class="row">
           <div class="col-12 col-md-3 pub-row-heading" style="line-height:34px;">{{ i18n "links" }}</div>
           <div class="col-12 col-md-9">
-
+    
             {{ partial "publication_links" (dict "content" . "is_list" 0) }}
-
+    
           </div>
         </div>
       </div>
       <div class="col-md-1"></div>
     </div>
     <div class="d-sm-none space-below"></div>
-
+    
     <div class="space-below"></div>
-
+    
     <div class="article-style">{{ .Content }}</div>
-
+    
     {{ partial "tags.html" . }}
+
+    {{ if .Site.Params.reward }}
+    {{ partial "reward.html" . }}
+    {{ end }}
 
   </div>
 </div>
